@@ -16,15 +16,15 @@ class CreateMajoritiesTable extends Migration
         Schema::create('majorities', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('faculty_id')->unsigned();
-            $table->string('name',50);
-            $table->string('description',100);
+            $table->string('name', 50);
+            $table->string('description', 100);
             $table->softDeletes();
             $table->timestamps();
         });
 
-        Schema::table('majorities',function (Blueprint $table){
-            $table->foreign('faculty_id')->references('id')->on('faculties');
-        });
+//        Schema::table('majorities', function (Blueprint $table) {
+//            $table->foreign('faculty_id')->references('id')->on('faculties');
+//        });
     }
 
     /**

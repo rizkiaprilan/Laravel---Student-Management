@@ -22,9 +22,11 @@ class CreateStudentsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('students',function (Blueprint $table){
-            $table->foreign('majority_id')->references('id')->on('majorities');
-        });
+//        Schema::table('students',function (Blueprint $table){
+//            $table->foreign('majority_id')->references('id')->on('majorities');
+//        });
+
+
     }
 
     /**
