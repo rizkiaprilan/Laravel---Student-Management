@@ -13,23 +13,22 @@ class CreateClubStudentTable extends Migration
      */
     public function up()
     {
-
         Schema::create('club_student', function (Blueprint $table) {
+
             $table->increments('id');
             $table->integer('student_id')->unsigned();
             $table->integer('club_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
-        });
 
+        });
         Schema::table('club_student',function (Blueprint $table){
-           $table->foreign('student_id')->references('id')->on('students');
+            $table->foreign('student_id')->references('id')->on('students');
         });
 
         Schema::table('club_student',function (Blueprint $table){
             $table->foreign('club_id')->references('id')->on('clubs');
         });
-
     }
 
     /**

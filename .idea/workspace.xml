@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edc954df-2787-48af-a1ec-e1c9aee62b5f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="edc954df-2787-48af-a1ec-e1c9aee62b5f" name="Default Changelist" comment="version 0.3">
+      <change afterPath="$PROJECT_DIR$/resources/views/card/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/card/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/card/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/card/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/club/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/club/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/club/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/club/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/credit/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/credit/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/credit/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/credit/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/faculty/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/faculty/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/faculty/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/faculty/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/major/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/major/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/major/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/major/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/student/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/student/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/student/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_093434_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_18_093434_create_students_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_093812_create_majorities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_18_093812_create_majorities_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_093434_create_students_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_093633_create_clubs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_093744_create_cards_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_093755_create_credits_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_093812_create_majorities_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_093830_create_faculties_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_101843_create_club_student_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/public/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/student/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,6 +153,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -148,8 +185,19 @@
       <updated>1574062798855</updated>
       <workItem from="1574062800239" duration="2051000" />
       <workItem from="1574065639593" duration="11476000" />
-      <workItem from="1574153338244" duration="3842000" />
+      <workItem from="1574153338244" duration="3998000" />
+      <workItem from="1574164465210" duration="19684000" />
+      <workItem from="1574213108890" duration="25522000" />
+      <workItem from="1574250603725" duration="836000" />
     </task>
+    <task id="LOCAL-00001" summary="version 0.2">
+      <created>1574158565506</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574158565506</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +217,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="version 0.2" />
+    <MESSAGE value="version 0.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 0.3" />
   </component>
 </project>

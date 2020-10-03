@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Majority;
-use App\Student;
+use App\Card;
+use App\Credit;
 use Illuminate\Http\Request;
 
-class StudentControllers extends Controller
+class CreditControllers extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class StudentControllers extends Controller
      */
     public function index()
     {
-        $title = "All Data Students";
-        $student = Student::all();
-        return view('student/home', [
-            'student' => $student,
+        $title = "All Data Credit";
+        $credit = Credit::all();
+        return view('credit/home', [
+            'credit' => $credit,
             'title' => $title,
         ]);
     }
@@ -30,10 +30,12 @@ class StudentControllers extends Controller
      */
     public function create()
     {
-        $majority = Majority::all();
-        return view('student/create',[
-            'majority' => $majority,
-
+        $title = "All Data Credit";
+        $card = Card::all();
+//        dd($card);
+        return view('credit/create', [
+            "judul" => $title,
+            'card' => $card,
         ]);
     }
 
@@ -45,14 +47,11 @@ class StudentControllers extends Controller
      */
     public function store(Request $request)
     {
-        $hasil = (int)$request->majority_id;
-        Student::create([
-            'name' => $request->name,
-            'majority_id' => $hasil,
-            'address' => $request->address
+        Credit::create([
+            'student_card_id' => $request->card_id,
+            'balance' => $request->balance,
         ]);
-
-        return  redirect('/student');
+        return redirect('/credit');
     }
 
     /**
@@ -63,15 +62,8 @@ class StudentControllers extends Controller
      */
     public function show($id)
     {
-        $title = "Majority ID > id";
-
-        $data = Student::where('id', '=', $id)->first();
-        return view('student/show', [
-            "title" => $title,
-            "data" => $data,
-        ]);
+        //
     }
-
 
     /**
      * Show the form for editing the specified resource.
@@ -81,12 +73,12 @@ class StudentControllers extends Controller
      */
     public function edit($id)
     {
-        $data = Student::where('id', '=', $id)->first();
-        $Majority = Majority::all();
+        $data = Credit::where('id', '=', $id)->first();
+        $card = Card::all();
 
-        return view('student/edit', [
+        return view('credit/edit', [
             'data' => $data,
-            'majority' => $Majority,
+            'card' => $card,
         ]);
     }
 
@@ -99,14 +91,13 @@ class StudentControllers extends Controller
      */
     public function update(Request $request)
     {
-        Student::where('id', '=', $request->id)
+        Credit::where('id', '=', $request->id)
             ->update([
-                'address' => $request->address,
-                'name' => $request->name,
-                'majority_id' => $request->majority_id,
+                'student_card_id' => $request->card_id,
+                'balance' => $request->balance,
             ]);
 
-        return redirect('/student');
+        return redirect('/credit');
     }
 
     /**
@@ -117,10 +108,9 @@ class StudentControllers extends Controller
      */
     public function destroy($id)
     {
-        $student = Student::find($id);
-        $card = Card::find();
+        $data = Credit::find($id);
         $data->forceDelete();
 
-        return redirect('/student');
+        return redirect('/credit');
     }
 }

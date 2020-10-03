@@ -1,18 +1,18 @@
 @extends('layouts/master')
 
 @section('title')
-    Student | Home
+    Credit | Home
 @endsection
 
 @section('header-content')
-    Student Page
+    Credit Page
 @endsection
 
 @section('content')
     <div class="box">
-        <a href="student/create">
+        <a href="/credit/create">
             <button class="btn-primary">
-                Create Student
+                Create Credit
             </button>
         </a>
         <div class="box-header">
@@ -24,19 +24,18 @@
                 <tbody>
                 <tr>
                     <th style="width: 10px">#</th>
-                    <th>NAME</th>
-                    <th>MAJORITY ID</th>
-                    <th>ADDRESS</th>
+{{--                    <th>STUDENT NAME/th>--}}
+                    <th>STUDENT CARD ID</th>
+                    <th>BALANCE</th>
                     <th>ACTION</th>
                 </tr>
-                @foreach($student as $s)
+                @foreach($credit as $c)
                     <tr>
-                        <td>{{$s->id}} </td>
-                        <td>{{$s->name}}</td>
-                        <td>{{$s->majority_id}}</td>
-                        <td>{{$s->address}}</td>
-                        <td><a href="/student/edit/{{$s->id}}">EDIT</a>
-{{--                            |<a href="/student/delete/{{$s->id}}">DELETE</a>--}}
+                        <td>{{$c->id}} </td>
+{{--                        <td>{{$c->card->name}} </td>--}}
+                        <td>{{$c->student_card_id}}</td>
+                        <td>{{$c->balance}}</td>
+                        <td><a href="/credit/edit/{{$c->id}}">EDIT</a>|<a href="/credit/delete/{{$c->id}}">DELETE</a>
                         </td>
                     </tr>
                 @endforeach

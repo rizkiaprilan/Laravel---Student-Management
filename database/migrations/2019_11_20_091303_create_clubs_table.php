@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMajoritiesTable extends Migration
+class CreateClubsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,13 @@ class CreateMajoritiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('majorities', function (Blueprint $table) {
+        Schema::create('clubs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('faculty_id')->unsigned();
-            $table->string('name', 50);
-            $table->string('description', 100);
+            $table->string('name',50);
+            $table->string('description',100);
             $table->softDeletes();
             $table->timestamps();
         });
-
-//        Schema::table('majorities', function (Blueprint $table) {
-//            $table->foreign('faculty_id')->references('id')->on('faculties');
-//        });
     }
 
     /**
@@ -34,6 +29,6 @@ class CreateMajoritiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('majorities');
+        Schema::dropIfExists('clubs');
     }
 }

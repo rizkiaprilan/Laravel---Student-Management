@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCardsTable extends Migration
+class CreateCreditsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateCardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cards', function (Blueprint $table) {
+        Schema::create('credits', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',50);
-            $table->integer('student_id')->unsigned();
+            $table->integer('student_card_id')->unsigned();
+            $table->integer('balance');
             $table->softDeletes();
             $table->timestamps();
         });
 
-        Schema::table('cards',function (Blueprint $table){
-           $table->foreign('student_id')->references('id')->on('students');
+        Schema::table('credits',function (Blueprint $table){
+            $table->foreign('student_card_id')->references('id')->on('cards');
         });
     }
 
@@ -33,6 +33,6 @@ class CreateCardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cards');
+        Schema::dropIfExists('credits');
     }
 }

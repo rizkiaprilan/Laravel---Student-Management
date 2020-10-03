@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Majority;
+use App\Card;
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class StudentControllers extends Controller
+class CardControllers extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +16,10 @@ class StudentControllers extends Controller
      */
     public function index()
     {
-        $title = "All Data Students";
-        $student = Student::all();
-        return view('student/home', [
-            'student' => $student,
+        $title = "All Data Cards";
+        $card = Card::all();
+        return view('card/home', [
+            'card' => $card,
             'title' => $title,
         ]);
     }
@@ -30,9 +31,9 @@ class StudentControllers extends Controller
      */
     public function create()
     {
-        $majority = Majority::all();
-        return view('student/create',[
-            'majority' => $majority,
+        $student = Student::all();
+        return view('card/create',[
+            'student' => $student,
 
         ]);
     }
@@ -40,87 +41,88 @@ class StudentControllers extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $hasil = (int)$request->majority_id;
-        Student::create([
+//        $data = Card::where('name', '=', $request->name)->first();
+//        $cek = Student::where('name', '=', $request->name)->get();
+//        $id = $data->id;
+//        dd($cek);
+        Card::create([
             'name' => $request->name,
-            'majority_id' => $hasil,
-            'address' => $request->address
+            'student_id' =>  $request->student_id ,
         ]);
 
-        return  redirect('/student');
+        return  redirect('/card');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $title = "Majority ID > id";
+        $title = "Show Card";
 
-        $data = Student::where('id', '=', $id)->first();
-        return view('student/show', [
-            "title" => $title,
+        $data = Card::where('id', '=', $id)->first();
+//        dd($data);
+        return view('card/show', [
+            "judul" => $title,
             "data" => $data,
         ]);
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $data = Student::where('id', '=', $id)->first();
-        $Majority = Majority::all();
 
-        return view('student/edit', [
-            'data' => $data,
-            'majority' => $Majority,
+        $data = Card::where('id', '=', $id)->first();
+//        dd($data);
+        return view('card/edit', [
+            "data" => $data,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-        Student::where('id', '=', $request->id)
+        Card::where('id', '=', $request->id)
             ->update([
-                'address' => $request->address,
                 'name' => $request->name,
-                'majority_id' => $request->majority_id,
+                'student_id' => $request->id,
+
             ]);
 
-        return redirect('/student');
+
+        return redirect('/card');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $student = Student::find($id);
-        $card = Card::find();
+        $data = Card::find($id);
         $data->forceDelete();
 
-        return redirect('/student');
+        return redirect('/card');
     }
 }

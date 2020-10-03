@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Majority;
-use App\Student;
+use App\Club;
 use Illuminate\Http\Request;
 
-class StudentControllers extends Controller
+class ClubControllers extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,10 @@ class StudentControllers extends Controller
      */
     public function index()
     {
-        $title = "All Data Students";
-        $student = Student::all();
-        return view('student/home', [
-            'student' => $student,
+        $title = "All Data Clubs";
+        $club = Club::all();
+        return view('club/home', [
+            'club' => $club,
             'title' => $title,
         ]);
     }
@@ -30,97 +29,84 @@ class StudentControllers extends Controller
      */
     public function create()
     {
-        $majority = Majority::all();
-        return view('student/create',[
-            'majority' => $majority,
-
+        $title = "All Data clubs";
+        return view('club/create',[
+            "judul" => $title
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $hasil = (int)$request->majority_id;
-        Student::create([
+        Club::create([
             'name' => $request->name,
-            'majority_id' => $hasil,
-            'address' => $request->address
+            'description' => $request->description,
         ]);
-
-        return  redirect('/student');
+        return redirect('/club');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $title = "Majority ID > id";
-
-        $data = Student::where('id', '=', $id)->first();
-        return view('student/show', [
-            "title" => $title,
-            "data" => $data,
-        ]);
+        //
     }
-
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $data = Student::where('id', '=', $id)->first();
-        $Majority = Majority::all();
 
-        return view('student/edit', [
-            'data' => $data,
-            'majority' => $Majority,
+        $data = Club::where('id', '=', $id)->first();
+        return view('club/edit', [
+            "data" => $data,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-        Student::where('id', '=', $request->id)
+        Club::where('id', '=', $request->id)
             ->update([
-                'address' => $request->address,
                 'name' => $request->name,
-                'majority_id' => $request->majority_id,
+                'description' => $request->description,
+
             ]);
 
-        return redirect('/student');
+
+        return redirect('/club');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $student = Student::find($id);
-        $card = Card::find();
+        $data = Club::find($id);
         $data->forceDelete();
 
-        return redirect('/student');
+        return redirect('/club');
     }
 }

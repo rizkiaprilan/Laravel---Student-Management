@@ -1,18 +1,18 @@
 @extends('layouts/master')
 
 @section('title')
-    Student | Home
+    faculty | Home
 @endsection
 
 @section('header-content')
-    Student Page
+    faculty Page
 @endsection
 
 @section('content')
     <div class="box">
-        <a href="student/create">
+        <a href="faculty/create">
             <button class="btn-primary">
-                Create Student
+                Create faculty
             </button>
         </a>
         <div class="box-header">
@@ -25,19 +25,15 @@
                 <tr>
                     <th style="width: 10px">#</th>
                     <th>NAME</th>
-                    <th>MAJORITY ID</th>
-                    <th>ADDRESS</th>
+                    <th>DESCRIPTION</th>
                     <th>ACTION</th>
                 </tr>
-                @foreach($student as $s)
+                @foreach($faculty as $f)
                     <tr>
-                        <td>{{$s->id}} </td>
-                        <td>{{$s->name}}</td>
-                        <td>{{$s->majority_id}}</td>
-                        <td>{{$s->address}}</td>
-                        <td><a href="/student/edit/{{$s->id}}">EDIT</a>
-{{--                            |<a href="/student/delete/{{$s->id}}">DELETE</a>--}}
-                        </td>
+                        <td>{{$f->id}} </td>
+                        <td><a href="/faculty/show/{{$f->id}}">{{$f->name}}</a></td>
+                        <td>{{$f->description}}</td>
+                        <td><a href="/faculty/edit/{{$f->id}}">EDIT</a>|<a href="/faculty/delete/{{$f->id}}">DELETE</a></td>
                     </tr>
                 @endforeach
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudentsTable extends Migration
+class CreateMajoritiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,18 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('majorities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('majority_id')->unsigned();
-            $table->string('name',50);
-            $table->string('address',100);
+            $table->integer('faculty_id')->unsigned();
+            $table->string('name', 50);
+            $table->string('description', 100);
             $table->softDeletes();
             $table->timestamps();
         });
 
-//        Schema::table('students',function (Blueprint $table){
-//            $table->foreign('majority_id')->references('id')->on('majorities');
-//        });
-
-
+        Schema::table('majorities',function (Blueprint $table){
+           $table->foreign('faculty_id')->references('id')->on('faculties');
+        });
     }
 
     /**
@@ -36,6 +34,6 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('majorities');
     }
 }

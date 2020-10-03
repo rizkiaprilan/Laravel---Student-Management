@@ -10,11 +10,6 @@
 
 @section('content')
     <div class="box">
-        <a href="student/create">
-            <button class="btn-primary">
-                Create Student
-            </button>
-        </a>
         <div class="box-header">
             <h3 class="box-title">{{$title}}</h3>
         </div>
@@ -24,24 +19,17 @@
                 <tbody>
                 <tr>
                     <th style="width: 10px">#</th>
-                    <th>NAME</th>
-                    <th>MAJORITY ID</th>
-                    <th>ADDRESS</th>
-                    <th>ACTION</th>
+                    {{--                    <th>NAME</th>--}}
+                    <th>MAJORITY NAME</th>
+                    <th>DESCRIPTION</th>
                 </tr>
-                @foreach($student as $s)
+                @foreach($data->majority as $s)
                     <tr>
-                        <td>{{$s->id}} </td>
+                        <td>#</td>
                         <td>{{$s->name}}</td>
-                        <td>{{$s->majority_id}}</td>
-                        <td>{{$s->address}}</td>
-                        <td><a href="/student/edit/{{$s->id}}">EDIT</a>
-{{--                            |<a href="/student/delete/{{$s->id}}">DELETE</a>--}}
-                        </td>
+                        <td>{{$s->description}}</td>
                     </tr>
                 @endforeach
-
-
                 </tbody>
             </table>
         </div>
